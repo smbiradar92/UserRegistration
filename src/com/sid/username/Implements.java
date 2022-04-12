@@ -58,7 +58,8 @@ public class Implements {
 	}
 
 	public void validatePassword() {
-		String password = "^[a-zA-Z0-9@!#%^&*]{8,15}$";
+//		String password = "^[A-Za-z0-9@!#%^&*]{8,}$";		//UC 5, minimum 8 characters
+		String password = "^[A-Z]{1}[A-Za-z0-9@!#%^&*]{8,}$";		//UC 6, AtLeast one UpperCase letter
 		Pattern passPattern = Pattern.compile(password);
 		String inputpass = sc.next();
 
