@@ -40,8 +40,8 @@ public class Implements {
 	}
 
 	public void validateMobileNum() {
-//		String mobileNum = "[+]?[0-9]{2}[ ][0-9]{6,11}$";
-		String mobileNum = "^([+]?[1-9]{2})[\\s][0-9]{1,10}$";
+		String mobileNum = "^[+]?[0-9]{2}[\\s][0-9]{1,11}$";
+//		String mobileNum = "^([+]?[1-9]{2})[\\s][0-9]{1,10}$";
 	
 		Pattern mobileNumPattern = Pattern
 				.compile(mobileNum);
@@ -56,4 +56,21 @@ public class Implements {
 		}
 
 	}
+
+	public void validatePassword() {
+		String password = "^[a-zA-Z0-9@!#%^&*]{8,15}$";
+		Pattern passPattern = Pattern.compile(password);
+		String inputpass = sc.next();
+
+		if (passPattern.matcher(inputpass).matches()) {
+			System.out.println("The entered password "
+					+ inputpass + " is Valid");
+		} else {
+			System.out.println(
+					"The entered email is Invalid");
+		}
+
+	}
+	
+	
 }
