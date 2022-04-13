@@ -58,11 +58,12 @@ public class Implements {
 	}
 
 	public void validatePassword() {
-//		String password = "^[A-Za-z0-9@!#%^&*]{8,}$";									//	UC 5, minimum 8 characters
-//		String password = "^[A-Z]{1,8}[A-Za-z0-9@!#%^&*]{8,}$";							//	UC 6, AtLeast one UpperCase letter
-//		String password = "^[A-Z]{1,8}[0-9][A-Za-z0-9@!#%^&*]{8,}$";					//	UC 7, AtLeast one Numeric number
-		String password = "^[A-Z]{1,8}[0-9]{1,8}[@!#%^&*+-_=;']{1}[A-Za-z0-9]{8,}$"; // UC 8, Only one special character
+//		String password = "^?=.*[A-Za-z0-9@!#%^&*]{8,}$";									//	UC 5, minimum 8 characters
+//		String password = "^?=.*[A-Z]{1,8}[A-Za-z0-9@!#%^&*]{8,}$";							//	UC 6, AtLeast one UpperCase letter
+//		String password = "^?=.*[A-Z]{1,8}?=.*[0-9][A-Za-z0-9@!#%^&*]{8,}$";					//	UC 7, AtLeast one Numeric number
+//		String password = "^(?=.*[A-Z]{1,8})(?=.*[0-9]{1,8})(?=.*[@!#%^&*+-_=;']{1})[A-Za-z0-9]{8,}$"; // UC 8, Only one special character
 
+		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$"; // UC 8, Only one special character
 		Pattern passPattern = Pattern.compile(password);
 		String inputpass = sc.next();
 
@@ -72,6 +73,18 @@ public class Implements {
 		} else {
 			System.out.println(
 					"The entered email is Invalid");
+		}
+	}
+
+	public boolean clearAllEmail(String parameters) {
+
+		String checkEmail = "^[a-z0-9]{1,10}([.+-][a-z0-9]+)?@[a-z]+.[a-z]+.[a-z]{2,3}(.[a-z]{2,})?$";
+		Pattern clearPattern = Pattern.compile(checkEmail);
+
+		if (clearPattern.matcher(parameters).matches()) {
+			return true;
+		} else {
+			return false;
 		}
 
 	}

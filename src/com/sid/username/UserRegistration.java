@@ -25,6 +25,14 @@ public class UserRegistration {
 		impl.validatePassword();
 		System.out.println(
 				"<------------------------------------------------>");
-
+		System.out.println("**********All valid emails*********");
+		System.out.println(impl.clearAllEmail("abc@yahoo.com"));
+		System.out.println(impl.clearAllEmail("abc-100@yahoo.com"));
+		System.out.println(impl.clearAllEmail("abc.100@yahoo.com"));
+		System.out.println(impl.clearAllEmail("abc111@abc.com"));
+		System.out.println(impl.clearAllEmail("abc-100@abc.net"));
+		System.out.println(impl.clearAllEmail("abc.100@abc.com.au"));
+		System.out.println(impl.clearAllEmail("abc@1.com"));
+		System.out.println(impl.clearAllEmail("abc+100@yahoo.com"));
 	}
 }
