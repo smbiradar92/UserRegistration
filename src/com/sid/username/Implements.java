@@ -42,7 +42,7 @@ public class Implements {
 	public void validateMobileNum() {
 		String mobileNum = "^[+]?[0-9]{2}[\\s][0-9]{1,11}$";
 //		String mobileNum = "^([+]?[1-9]{2})[\\s][0-9]{1,10}$";
-	
+
 		Pattern mobileNumPattern = Pattern
 				.compile(mobileNum);
 		String inputMob = sc.next();
@@ -58,10 +58,10 @@ public class Implements {
 	}
 
 	public void validatePassword() {
-//		String password = "^[A-Za-z0-9@!#%^&*]{8,}$";				//	UC 5, minimum 8 characters
-//		String password = "^[A-Z]{1}[A-Za-z0-9@!#%^&*]{8,}$";		//	UC 6, AtLeast one UpperCase letter
-
-		String password = "^[A-Z]{1}[0-9][A-Za-z0-9@!#%^&*]{8,}$";		//	UC 7, AtLeast one Numeric number
+//		String password = "^[A-Za-z0-9@!#%^&*]{8,}$";									//	UC 5, minimum 8 characters
+//		String password = "^[A-Z]{1,8}[A-Za-z0-9@!#%^&*]{8,}$";							//	UC 6, AtLeast one UpperCase letter
+//		String password = "^[A-Z]{1,8}[0-9][A-Za-z0-9@!#%^&*]{8,}$";					//	UC 7, AtLeast one Numeric number
+		String password = "^[A-Z]{1,8}[0-9]{1,8}[@!#%^&*+-_=;']{1}[A-Za-z0-9]{8,}$"; // UC 8, Only one special character
 
 		Pattern passPattern = Pattern.compile(password);
 		String inputpass = sc.next();
@@ -75,6 +75,5 @@ public class Implements {
 		}
 
 	}
-	
-	
+
 }
