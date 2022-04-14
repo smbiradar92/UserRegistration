@@ -4,7 +4,7 @@ public class UserRegistration {
 
 	public static void main(String[] args) {
 
-		Implements impl = new Implements();
+		UserReg impl = new UserReg();
 		System.out.println("Enter the FirstName");
 		impl.validateName();
 		System.out.println(
@@ -34,5 +34,11 @@ public class UserRegistration {
 		System.out.println(impl.clearAllEmail("abc.100@abc.com.au"));
 		System.out.println(impl.clearAllEmail("abc@1.com"));
 		System.out.println(impl.clearAllEmail("abc+100@yahoo.com"));
+	
+//		System.out.println(
+//				"<------------------------------------------------>");
+//		System.out.println("Enter the password");
+//		impl.validatePassword();
+//	
 	}
 }

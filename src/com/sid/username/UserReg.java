@@ -3,7 +3,7 @@ package com.sid.username;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Implements {
+public class UserReg {
 
 	Scanner sc = new Scanner(System.in);
 
@@ -21,7 +21,6 @@ public class Implements {
 			System.out
 					.println("The entered name is Invalid");
 		}
-
 	}
 
 	public void validateEmail() {
@@ -63,7 +62,8 @@ public class Implements {
 //		String password = "^?=.*[A-Z]{1,8}?=.*[0-9][A-Za-z0-9@!#%^&*]{8,}$";					//	UC 7, AtLeast one Numeric number
 //		String password = "^(?=.*[A-Z]{1,8})(?=.*[0-9]{1,8})(?=.*[@!#%^&*+-_=;']{1})[A-Za-z0-9]{8,}$"; // UC 8, Only one special character
 
-		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$"; // UC 8, Only one special character
+		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}]{1})[(a-zA-Z0-9).(+-_!@#$%^&*(){}'.,){1}]{8,}$"; // UC 8, Only one special character
+
 		Pattern passPattern = Pattern.compile(password);
 		String inputpass = sc.next();
 
@@ -72,7 +72,7 @@ public class Implements {
 					+ inputpass + " is Valid");
 		} else {
 			System.out.println(
-					"The entered email is Invalid");
+					"The entered Password is Invalid");
 		}
 	}
 
